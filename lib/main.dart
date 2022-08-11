@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-void main() => runApp(MaterialApp(
+void main() => runApp(const MaterialApp(
       home: MyApp(),
     ));
 
@@ -12,17 +12,17 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  String va = "vivek is very good boy";
+  bool a = true;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(va),
+        title: Text(a ? "vivek is very good boy" : "vivek is very bad boy"),
       ),
       body: GestureDetector(
         onTap: () {
           setState(() {
-            va = "vivek is very bad boy";
+            a = !a;
           });
         },
         child: Container(color: Colors.red),
